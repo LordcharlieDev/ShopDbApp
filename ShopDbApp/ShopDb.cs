@@ -9,9 +9,7 @@ namespace ShopDbApp
 {
     public class ShopDb : DbContext
     {
-        public ShopDb()
-        {
-        }
+        public ShopDb() {}
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -25,9 +23,10 @@ namespace ShopDbApp
             modelBuilder.SeedCategories();
             modelBuilder.SeedCountries();
             modelBuilder.SeedPosition();
+            modelBuilder.SeedCity();
 
 
-
+            //Configurations
             modelBuilder.Entity<Category>().Property(c => c.Name)
                     .HasMaxLength(50)
                     .IsRequired();
@@ -70,6 +69,21 @@ namespace ShopDbApp
             modelBuilder.Entity<Worker>().Property(w => w.PhoneNumber)
                                             .HasMaxLength(50)
                                             .IsRequired();
+
+            //Relationships
+            modelBuilder.Entity<Worker>().HasOne(w => w.Shop)
+                                         .WithMany(s => s.Workers);            
+            modelBuilder.Entity<Worker>().HasOne(w => w.Position)
+                                         .WithMany(p => p.Workers);             
+            modelBuilder.Entity<Shop>().HasMany(s => s.Products)
+                                         .WithMany(p => p.Shops);              
+            modelBuilder.Entity<Shop>().HasOne(s => s.City)
+                                         .WithMany(c => c.Shops);             
+            modelBuilder.Entity<Product>().HasOne(p => p.Category)
+                                         .WithMany(c => c.Products);            
+            modelBuilder.Entity<City>().HasOne(c => c.Country)
+                                         .WithMany(c => c.Cities);  
+            
         }
 
         public DbSet<Category> Categories { get; set; }

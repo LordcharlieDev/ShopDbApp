@@ -35,5 +35,15 @@ namespace ShopDbApp
                 new Position(){ Id = 3, Name = "Adviser"}
             });
         }
+
+        public static void SeedCity(this ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<City>().HasData(new[]
+            {
+                new City() { Id = 1, Name = "Kyiv"},
+                new City() { Id = 1, Name = "Rivne"},
+                new City() { Id = 1, Name = "Krakiv"}
+            });
+        }
     }
 }
