@@ -23,7 +23,6 @@ namespace ShopDbApp
             modelBuilder.SeedCategories();
             modelBuilder.SeedCountries();
             modelBuilder.SeedPosition();
-            modelBuilder.SeedCity();
 
 
             //Configurations
