@@ -7,18 +7,25 @@ using System.Threading.Tasks;
 
 namespace ShopDbApp
 {
-    public class Cities
+    public class Products
     {
-        public Cities()
+        public Products()
         {
             Shops = new HashSet<Shops>();
         }
         public int Id { get; set; }
-        [Required]
+        [Required] 
         public string Name { get; set; }
+        [Required]
+        public decimal Price { get; set; }
+        public float Discount { get; set; }
+        public int Quantity { get; set; }
+        public bool IsInStock { get; set; }
 
 
+        public Categories Category { get; set; }
         public ICollection<Shops> Shops { get; set; }
-        public Countries Country { get; set; }
+
+        
     }
 }
