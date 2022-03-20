@@ -14,9 +14,7 @@ namespace ShopDbApp
             Shops = new HashSet<Shops>();
         }
         public int Id { get; set; }
-        [Required] 
         public string Name { get; set; }
-        [Required]
         public decimal Price { get; set; }
         public float Discount { get; set; }
         public int Quantity { get; set; }
