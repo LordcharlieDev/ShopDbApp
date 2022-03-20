@@ -18,15 +18,6 @@ namespace ShopDbApp
                 new Country { Id = 3, Name = "Poland"}
             });
         }
-        public static void SeedCities(this ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<City>().HasData(new[]
-            {
-                new City() { Id = 1, Name = "Kyiv"},
-                new City() { Id = 2, Name = "Rivne"},
-                new City(){ Id = 3, Name = "Krakiv"}
-            });
-        }
         public static void SeedCategories(this ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Category>().HasData(new[]

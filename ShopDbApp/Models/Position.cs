@@ -14,7 +14,6 @@ namespace ShopDbApp
             Workers = new HashSet<Worker>();
         }
         public int Id { get; set; }
-        [Required]
         public string Name { get; set; }
         public ICollection<Worker> Workers { get; set; }
     }

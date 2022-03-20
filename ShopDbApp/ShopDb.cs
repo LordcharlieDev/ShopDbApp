@@ -22,7 +22,54 @@ namespace ShopDbApp
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.SeedCategories();
+            modelBuilder.SeedCountries();
+            modelBuilder.SeedPosition();
 
+
+
+            modelBuilder.Entity<Category>().Property(c => c.Name)
+                    .HasMaxLength(50)
+                    .IsRequired();
+
+            modelBuilder.Entity<City>().Property(c => c.Name)
+                    .HasMaxLength(50)
+                    .IsRequired();
+
+            modelBuilder.Entity<Country>().Property(c => c.Name)
+                                .HasMaxLength(50)
+                                .IsRequired();
+
+            modelBuilder.Entity<Product>().Property(p => p.Name)
+                    .HasMaxLength(50)
+                    .IsRequired();
+            modelBuilder.Entity<Product>().Property(p => p.Price)
+                    .IsRequired();
+
+
+            modelBuilder.Entity<Position>().Property(p => p.Name)
+                                .HasMaxLength(50)
+                                .IsRequired();
+
+            modelBuilder.Entity<Shop>().Property(s => s.Name)
+                                            .HasMaxLength(50)
+                                            .IsRequired();
+            modelBuilder.Entity<Shop>().Property(s => s.Address)
+                                            .HasMaxLength(150)
+                                            .IsRequired();
+
+            modelBuilder.Entity<Worker>().Property(w => w.Name)
+                                            .HasMaxLength(50)
+                                            .IsRequired();
+            modelBuilder.Entity<Worker>().Property(w => w.Surname)
+                                            .HasMaxLength(50)
+                                            .IsRequired();
+            modelBuilder.Entity<Worker>().Ignore(w => w.FullName);
+            modelBuilder.Entity<Worker>().Property(w => w.Salary).IsRequired();
+            modelBuilder.Entity<Worker>().Property(w => w.Email).IsRequired();
+            modelBuilder.Entity<Worker>().Property(w => w.PhoneNumber)
+                                            .HasMaxLength(50)
+                                            .IsRequired();
         }
 
         public DbSet<Category> Categories { get; set; }

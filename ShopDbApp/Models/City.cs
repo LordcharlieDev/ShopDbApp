@@ -14,9 +14,7 @@ namespace ShopDbApp
             Shops = new HashSet<Shop>();
         }
         public int Id { get; set; }
-        [Required]
         public string Name { get; set; }
-
 
         public ICollection<Shop> Shops { get; set; }
         public Country Country { get; set; }
