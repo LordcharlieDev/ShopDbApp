@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace ShopDbApp
 {
-    public class Shops
+    public class Shop
     {
-        public Shops()
+        public Shop()
         {
-            Workers = new HashSet<Workers>();
-            Products = new HashSet<Products>();
+            Workers = new HashSet<Worker>();
+            Products = new HashSet<Product>();
         }
         public int Id { get; set; }
         public string Name { get; set; }
         public string Address { get; set; }
         public int? ParkingArea { get; set; }
 
-        public Cities City { get; set; }
-        public ICollection<Workers> Workers { get; set; }
-        public ICollection<Products> Products { get; set; }
+        public City City { get; set; }
+        public ICollection<Worker> Workers { get; set; }
+        public ICollection<Product> Products { get; set; }
     }
 }

@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace ShopDbApp
 {
-    public class Products
+    public class Product
     {
-        public Products()
+        public Product()
         {
-            Shops = new HashSet<Shops>();
+            Shops = new HashSet<Shop>();
         }
         public int Id { get; set; }
         public string Name { get; set; }
@@ -21,8 +21,8 @@ namespace ShopDbApp
         public bool IsInStock { get; set; }
 
 
-        public Categories Category { get; set; }
-        public ICollection<Shops> Shops { get; set; }
+        public Category Category { get; set; }
+        public ICollection<Shop> Shops { get; set; }
 
         
     }

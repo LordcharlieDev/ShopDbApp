@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ShopDbApp
 {
-    public class Workers
+    public class Worker
     {
         public int Id { get; set; }
         [Required]
@@ -23,8 +23,8 @@ namespace ShopDbApp
         public string Email { get; set; }
         [Required]
         public string PhoneNumber { get; set; }
-        public Shops Shop { get; set; }
-        public Positions Position { get; set; }
+        public Shop Shop { get; set; }
+        public Position Position { get; set; }
 
     }
 }

@@ -7,17 +7,18 @@ using System.Threading.Tasks;
 
 namespace ShopDbApp
 {
-    public class Countries
+    public class City
     {
-
-        public Countries()
+        public City()
         {
-            Cities = new HashSet<Cities>();
+            Shops = new HashSet<Shop>();
         }
         public int Id { get; set; }
         [Required]
         public string Name { get; set; }
 
-        public ICollection<Cities> Cities { get; set; }
+
+        public ICollection<Shop> Shops { get; set; }
+        public Country Country { get; set; }
     }
 }

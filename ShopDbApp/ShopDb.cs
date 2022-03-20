@@ -25,13 +25,13 @@ namespace ShopDbApp
 
         }
 
-        public DbSet<Categories> Categories { get; set; }
-        public DbSet<Cities> Cities { get; set; }
-        public DbSet<Countries> Countries { get; set; }
-        public DbSet<Positions> Positions { get; set; }
-        public DbSet<Products> Products { get; set; }
-        public DbSet<Shops> Shops { get; set; }
-        public DbSet<Workers> Workers { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<City> Cities { get; set; }
+        public DbSet<Country> Countries { get; set; }
+        public DbSet<Position> Positions { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Shop> Shops { get; set; }
+        public DbSet<Worker> Workers { get; set; }
 
     }
 }

@@ -7,15 +7,17 @@ using System.Threading.Tasks;
 
 namespace ShopDbApp
 {
-    public class Positions
+    public class Category
     {
-        public Positions()
+        public Category()
         {
-            Workers = new HashSet<Workers>();
+            Products = new HashSet<Product>();
         }
+
         public int Id { get; set; }
         [Required]
         public string Name { get; set; }
-        public ICollection<Workers> Workers { get; set; }
+
+        public ICollection<Product> Products { get; set; }
     }
 }
